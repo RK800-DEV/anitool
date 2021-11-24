@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container mt-3">
+        <div class="card shadow-lg mb-3 border-0">
+            <div class="card-header bg-white py-4">
+                <h1 class="fw900 text-center">
+                    Результаты сканирования
+                </h1>
+                <h4 class="text-center fw-900">Попробуйте воспользоваться AniTool сейчас - это бесплатно. AniTool всегда будет бесплатным.</h4>
+            </div>
+            <div class="card-body">
+                <h2 class="font-weight-light">
+                    {% if status == 'available' %}
+                        Аниме под названием <span class="font-weight-bold">"{{ anime }}"</span> <a class="text-success" href="{{ watch_link }}">доступно</a> для просмотра на территории Казахстана и России.
+                    {% elif status == 'unavailable'  %}
+                        К сожалению, аниме под названием <span class="font-weight-bold">"{{ anime }}"</span> <span class="text-danger">не доступно</span> для просмотра на территории Казахстана и России. Мы подготовили Вам сервисы на которых его можно посмотреть - <a href="https://animevost.am">Animevost</a>, <a href="https://gogoanime.vc">gogoanime</a>, <a href="https://anime.anidub.life/">AnidubLife</a>.
+                    {% else %}
+                        По Вашему запросу <span class="font-weight-bold">"{{ anime }}"</span> ничего не найдено. <a href="/">Попробуйте снова</a>
+                    {% endif %}
+                </h2>
+                <a href="/" class="btn btn-primary">Запустить еще сканирование</a>
+            </div>
+        </div>
+        {% include "includes/blocks/aboutproj.html" %}
+    </div>
+{% endblock %}

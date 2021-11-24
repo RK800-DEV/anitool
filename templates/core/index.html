@@ -1,0 +1,29 @@
+﻿{% extends "base.html" %}
+{% block content %}
+{% load static %}
+    <div class="container mt-3">
+        <div class="row">
+        <div class="col-lg-12">
+        <div class="card shadow-lg mb-3 border-0">
+            <div class="card-header bg-white py-4">
+                <h1 class="fw900 text-center">
+                    AniTool - инструмент для поиска обходов для заблокированных аниме на территории России и Казахстана
+                </h1>
+                <h4 class="text-center fw-900">Попробуйте воспользоваться AniTool сейчас - это бесплатно. AniTool всегда будет бесплатным.</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" class="row" action="/checkAvailability/">
+                    {% csrf_token %}
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" placeholder="Введите название аниме и нажмите Enter" name="animeName">
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        <div class="col-lg-12">
+            {% include "includes/blocks/aboutproj.html" %}
+        </div>
+        </div>
+    </div>
+{% endblock %}
