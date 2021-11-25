@@ -12,7 +12,6 @@ HEADERS = {
     'cache-control': 'no-cache',
     'content-length': '43',
     'content-type': 'application/x-www-form-urlencoded',
-    #'cookie': '_ym_d=1633592171; _ym_uid=1627948085575021267; LB_member_sc=46047b901b3289567d2af164aae36c83; dle_user_id=1307799; dle_password=617d36ad42195eaae4158d967bbb1a8d; dle_newpm=0; PHPSESSID=ah52u895agald54sro7bd3p562',
     'origin': 'https://jut.su',
     'pragma': 'no-cache',
     'referer': 'https://jut.su/',
